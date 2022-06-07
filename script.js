@@ -17,11 +17,12 @@ let requiredRange3 = [200, null];
 
 function filterFunc(arr) {
     return courses.filter((course) => {
-        let arrNew = [
+        let new_filter = [ arr[0], !arr[1] ? Number.MAX_SAFE_INTEGER : arr[1] ]
+        let new_courses = [
             course.prices[0],
             !course.prices[1] ? Number.MAX_SAFE_INTEGER : course.prices[1]
         ]
-        return arrNew[0] >= arr[0] && arrNew[0] <= arr[1] && arrNew[1] >= arr[0] && arrNew[1] <= arr[1]
+        return new_courses[0] >= new_filter[0] && new_courses[0] <= new_filter[1] && new_courses[1] >= new_filter[0] && new_courses[1] <= new_filter[1]
     })
 }
 
